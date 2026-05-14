@@ -1,0 +1,21 @@
+name: T9 GitHub Actions Demo Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  observe-run:
+    name: Observe repository files
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: List repository files
+        run: ls -la
+
+      - name: Print confirmation message
+        run: echo "GitHub Actions workflow run completed successfully."
